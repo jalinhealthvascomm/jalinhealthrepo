@@ -122,16 +122,13 @@
     }
 
     function selectedCat(slug){
-        console.log(slug);
         axios({
             method: 'get',
             url: '/api/resources/category/' + slug,
         })
         .then(function (response) {
-            console.log(response);
         })
         .catch(function (error) {
-            console.error(error);
         })
     }
 
@@ -141,10 +138,8 @@
             url: '/api/resources',
         })
         .then(function (response) {
-            console.log(response);
         })
         .catch(function (error) {
-            console.error(error);
         })
     }
 </script>

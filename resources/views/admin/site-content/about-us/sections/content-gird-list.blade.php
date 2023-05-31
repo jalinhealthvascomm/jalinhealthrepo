@@ -347,7 +347,6 @@
 
     function itemEdit(item) {
     let EditForm = document.getElementById('frmitemEdit');
-    console.log(item);
     if (EditForm) {
         EditForm.action = '/admin/about-us/value-item/update';
     }

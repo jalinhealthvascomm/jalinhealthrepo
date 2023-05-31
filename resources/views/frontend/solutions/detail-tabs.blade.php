@@ -185,7 +185,6 @@
 
         let header = document.querySelector('.header-img');
         if (header) {
-            console.log(header)
             header.src = '/'+subSolution.image  ?? '/images/header.png';
         }
 

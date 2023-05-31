@@ -170,7 +170,6 @@ export default {
                 .get(url)
                 .then(response => (this.resources = response.data))
 
-            console.log(this.resources)
         },
         allResources(){
             this.selectedCat ='uncategorized'
@@ -195,7 +194,6 @@ export default {
             .get('/api/resources/empty')
             .then(response => (this.emptyResources = response.data))
 
-        // console.log(this.emptyResources);
     },
 }
 </script>
