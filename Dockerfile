@@ -27,6 +27,8 @@ RUN docker-php-ext-install pdo_mysql
 
 RUN chown -R www-data: /app/vendor
 
+RUN php artisan key:generate
+
 RUN cd /app && \
     php artisan storage:link 
 
