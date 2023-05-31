@@ -1,0 +1,69 @@
+@media (min-width: 1024) {
+  .modal-dialog {
+    max-width: 930px;
+    margin: 1.75rem auto;
+  }
+}
+.solution-icon svg {
+  width: 36px !important;
+  height: 36px !important;
+}
+
+p {
+  margin-bottom: 0px !important;
+}
+
+.navbar-vertical.navbar-expand-xs .navbar-collapse {
+  height: calc(100vh - 60px);
+}
+
+.note-modal-content .note-modal-footer {
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+  display: flex;
+  justify-content: end;
+}
+
+.note-modal-content .note-modal-footer .note-btn {
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+}
+
+.note-modal-content .checkbox label {
+  display: inline-flex !important;
+  gap: 12px;
+}
+
+p.title-bullet {
+  --tw-text-opacity: 1;
+  color: rgb(17 16 66/var(--tw-text-opacity));
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2rem;
+  padding-left: 2.5rem;
+  position: relative;
+}
+
+p.title-bullet:before {
+  background: #23b6ae;
+  border-radius: 50px;
+  content: "";
+  height: 16px;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+}
+
+p.content-for-bullet {
+  padding-left: 2.5rem;
+}
+
+.navbar-vertical.navbar-expand-xs {
+  max-width: 16.5rem !important;
+}
+
+textarea {
+  display: none;
+}

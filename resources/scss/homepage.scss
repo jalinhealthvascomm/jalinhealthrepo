@@ -1,0 +1,23 @@
+.hero-content {
+    h1 {
+        @apply heading-1 text-white uppercase font-bold text-end leading-tight;
+    }
+    p{
+        @apply text-white text-base lg:text-xl xl:text-2xl text-end;
+    }
+}
+
+.section-title{
+    h2{
+        @apply text-center text-navy text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[40px] leading-tight xl:leading-relaxed;
+    }
+    p{
+        @apply text-center text-gray-3 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl;
+    }
+}
+
+.media-content{
+    iframe {
+        @apply w-full;
+    }
+}

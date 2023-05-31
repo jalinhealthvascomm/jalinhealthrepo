@@ -1,0 +1,25 @@
+.product-and-services .heading-sub-title {
+    @apply flex justify-center;
+    p {
+        @apply text-white leading-relaxed text-base lg:text-xl xl:text-2xl font-normal text-center;
+        span{
+            @apply text-white leading-relaxed text-base lg:text-xl xl:text-2xl font-normal text-center;
+        }
+    }
+}
+
+.product-service-card {
+    .card{
+        @apply flex flex-col gap-6 bg-white rounded-2xl;
+        box-shadow: rgba(0, 127, 255, 0.2) 0px 10px 50px;
+        .badge{
+            @apply rounded-full bg-primary/10 p-2 w-fit;
+            svg{
+                @apply w-[50px] h-[50px];
+            }
+        }
+        p {
+            @apply text-base lg:text-xl xl:text-2xl text-gray-2;
+        }
+    }
+}

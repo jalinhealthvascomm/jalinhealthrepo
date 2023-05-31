@@ -1,0 +1,14 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/js/alpin.js": "/js/alpin.js",
+    "/js/globalfunc.js": "/js/globalfunc.js",
+    "/js/tw-elements.umd.min.js": "/js/tw-elements.umd.min.js",
+    "/js/axios.js": "/js/axios.js",
+    "/js/resources.js": "/js/resources.js",
+    "/js/manifest.js": "/js/manifest.js",
+    "/css/app.css": "/css/app.css",
+    "/css/main.css": "/css/main.css",
+    "/assets/css/soft-ui-custom.css": "/assets/css/soft-ui-custom.css",
+    "/assets/css/soft-ui-dashboard.css": "/assets/css/soft-ui-dashboard.css",
+    "/js/vendor.js": "/js/vendor.js"
+}

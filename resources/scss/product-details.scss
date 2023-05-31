@@ -1,0 +1,25 @@
+.heading-sub-title {
+    @apply flex justify-start;
+    p {
+        @apply text-white leading-relaxed text-base lg:text-xl xl:text-2xl font-normal ;
+    }
+}
+
+.product-details-content{
+    .side-content {
+        .right-content{
+            p {
+                @apply text-base lg:text-xl xl:text-2xl text-gray-3 mb-5 lg:mb-10;
+                b{
+                    @apply text-gray-2;
+                }
+                a {
+                    @apply text-primary underline underline-offset-4;
+                }
+                span{
+                    @apply text-base lg:text-xl xl:text-2xl text-gray-3 mb-5 lg:mb-10;
+                }
+            }
+        }
+    }
+}

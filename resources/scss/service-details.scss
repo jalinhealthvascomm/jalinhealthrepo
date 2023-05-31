@@ -1,0 +1,58 @@
+.heading-sub-title {
+    @apply flex justify-start;
+    p {
+        @apply text-white leading-relaxed text-base lg:text-xl xl:text-2xl font-normal ;
+    }
+}
+
+.service-details-content{
+    .side-content {
+        .right-content{
+            p {
+                @apply text-base lg:text-xl xl:text-2xl text-gray-3 mb-5 lg:mb-10;
+                span{
+                    @apply text-base lg:text-xl xl:text-2xl;
+                }
+                b{
+                    @apply text-gray-2;
+                }
+                a {
+                    @apply text-primary underline underline-offset-4;
+                }
+                &:nth-last-child(-n+1){
+                    @apply mb-0;
+                }
+            }
+        }
+    }
+    .client-services{
+        .feature-item{
+            a {
+                @apply text-primary underline underline-offset-4;
+            }
+        }
+    }
+
+    .our-service{
+        .card {
+            @apply rounded-2xl p-6 lg:pl-10 lg:pr-16 shadow-2xl;
+            background:  linear-gradient(112.58deg, #3C97F4 14.69%, #3BC2FC 100%);;
+            h6 {
+                @apply pb-4;
+            }
+            ul {
+                @apply list-disc list-outside pl-6 lg:pl-10;
+                li {
+                    @apply font-normal;
+                }
+            }
+        }
+    }
+}
+
+.service-detail.cta{
+    background: linear-gradient(112.58deg, #3C97F4 14.69%, #3BC2FC 100%);
+    .cta-content{
+        background: linear-gradient(112.58deg, #3C97F4 14.69%, #3BC2FC 100%);
+    }
+}

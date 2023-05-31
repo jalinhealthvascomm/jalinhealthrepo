@@ -1,0 +1,8 @@
+@layer utilities {
+  .btn {
+    @apply px-7 text-base font-bold py-3;
+  }
+  .btn.btn-primary {
+    @apply bg-primary text-white;
+  }
+}
