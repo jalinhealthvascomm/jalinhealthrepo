@@ -41,7 +41,7 @@
                 <div class="card-body pt-4 p-3">
                     <div class="form-group">
                         <label for="tinymcetitle">Title</label>
-                        <textarea class="form-control" id="tinymcetitle" rows="3" name="title"
+                        <textarea style="display: none;" class="form-control" id="tinymcetitle" rows="3" name="title"
                             form="content-side-form">{{ $homeSetting->title ?? '' }}</textarea>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                         <div class="">
                             <div class="form-group">
                                 <label for="tinymce">Content</label>
-                                <textarea class="form-control" id="tinymce" rows="3" name="content"
+                                <textarea style="display: none;" class="form-control" id="tinymce" rows="3" name="content"
                                     form="content-side-form"> {{ $content ?? '' }} </textarea>
                             </div>
 
@@ -105,7 +105,7 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="uploadimage" class="form-label">Youtube Iframe</label>
-                                        <textarea class="form-control" id="uploadimage" rows="3" 
+                                        <textarea style="display: none;" class="form-control" id="uploadimage" rows="3" 
                                         form="content-side-form" name="youtubeiframe">
                                             {{ $video ?? '' }}
                                         </textarea>

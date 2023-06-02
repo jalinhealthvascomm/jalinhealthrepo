@@ -28,7 +28,7 @@
                                     <label for="sub-solution-title">
                                         <h6>Description</h6>
                                     </label>
-                                    <textarea id="feature-description" name="description">{!! $feature->description !!}</textarea>
+                                    <textarea style="display: none;" id="feature-description" name="description">{!! $feature->description !!}</textarea>
                                 </div>
                             </div>
                             <div class="modal-footer">

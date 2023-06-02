@@ -21,7 +21,7 @@
                             <label for="product-feature-add">
                                 <h6>Product Benefits </h6>
                             </label>
-                            <textarea id="product-feature-add" name="description"></textarea>
+                            <textarea style="display: none;" id="product-feature-add" name="description"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -54,7 +54,7 @@
                             <label for="product-feature-edit">
                                 <h6>Product Benefits </h6>
                             </label>
-                            <textarea id="product-feature-edit" name="description"></textarea>
+                            <textarea style="display: none;" id="product-feature-edit" name="description"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">

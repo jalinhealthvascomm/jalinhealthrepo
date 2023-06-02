@@ -59,7 +59,7 @@
                     </div>
                     <div class="card-body py-2">
                         <div class="form-group">
-                            <textarea id="side-content"
+                            <textarea id="side-content" style="display: none;"
                                 name="content">{!! $siteContent->content ?? '' !!}</textarea>
                             @error('content')
                             <div class="alert alert-danger" role="alert">

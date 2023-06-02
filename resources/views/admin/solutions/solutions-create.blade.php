@@ -29,12 +29,12 @@
                                 <div class="col px-3">
                                     <div class="form-group card px-3 py-4">
                                         <label for="solution-description"><h6>Description</h6></label>
-                                        <textarea id="solution-description" name="description"></textarea>
+                                        <textarea style="display: none;" id="solution-description" name="description"></textarea>
                                     </div>
 
                                     <div class="form-group card px-3 py-4">
                                         <label for="solution-detail"><h6>Detail</h6></label>
-                                        <textarea id="solution-detail" name="detail"></textarea>
+                                        <textarea style="display: none;" id="solution-detail" name="detail"></textarea>
                                     </div>
                                 </div>
 

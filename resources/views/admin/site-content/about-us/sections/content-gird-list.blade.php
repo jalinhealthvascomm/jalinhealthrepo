@@ -208,7 +208,7 @@
                     </div>
                     <div class="card-body py-2">
                         <div class="form-group">
-                            <textarea id="side-content" name="content">{!! $siteContent->content ?? '' !!}</textarea>
+                            <textarea style="display: none;" id="side-content" name="content">{!! $siteContent->content ?? '' !!}</textarea>
                             @error('content')
                             <div class="alert alert-danger" role="alert">
                                 <strong>Descriptions</strong> required!

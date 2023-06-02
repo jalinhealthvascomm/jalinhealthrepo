@@ -117,7 +117,7 @@
                     </div>
                     <div class="card-body py-2">
                         <div class="form-group">
-                            <textarea id="side-content-excerpt"
+                            <textarea style="display: none;" id="side-content-excerpt"
                                 name="excerpt">{!! $siteContent->excerpt ?? '' !!}</textarea>
                             @error('excerpt')
                             <div class="alert alert-danger" role="alert">
@@ -185,7 +185,7 @@
                                         <label class="mb-0 ms-0" for="side-content-side">
                                             <h6 class="mb-0">Side Content</h6>
                                         </label>
-                                        <textarea id="side-content-side"
+                                        <textarea style="display: none;" id="side-content-side"
                                             name="side-content-content">{!! $contentSide->content ?? '' !!}</textarea>
                                         @error('side-content-content')
                                         <div class="alert alert-danger" role="alert">

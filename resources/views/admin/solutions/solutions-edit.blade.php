@@ -33,7 +33,7 @@
                                     <label for="sub-solution-description">
                                         <h6>Description</h6>
                                     </label>
-                                    <textarea id="sub-solution-description"
+                                    <textarea style="display: none;" id="sub-solution-description"
                                         name="description"></textarea>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                                 <label for="sub-solution-detail">
                                     <h6>Detail</h6>
                                 </label>
-                                <textarea id="sub-solution-detail"
+                                <textarea style="display: none;" id="sub-solution-detail"
                                     name="detail"></textarea>
                             </div>
                         </div>
@@ -181,7 +181,7 @@
                                                 <label for="solution-description">
                                                     <h6>Description</h6>
                                                 </label>
-                                                <textarea id="solution-description"
+                                                <textarea style="display: none;" id="solution-description"
                                                     name="description">{!! $solution->description !!}</textarea>
                                                 @error('description')
                                                     <div class="alert alert-danger" role="alert">
@@ -202,7 +202,7 @@
                                                 <label for="solution-detail">
                                                     <h6>Detail</h6>
                                                 </label>
-                                                <textarea id="solution-detail"
+                                                <textarea style="display: none;" id="solution-detail"
                                                     name="detail">{!! $solution->detail !!}</textarea>
                                                 @error('detail')
                                                     <div class="alert alert-danger" role="alert">

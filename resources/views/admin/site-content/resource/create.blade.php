@@ -119,7 +119,7 @@
                             </div>
                             <div class="card-body py-2">
                                 <div class="form-group">
-                                    <textarea id="resource-content" name="content"></textarea>
+                                    <textarea style="display: none;" id="resource-content" name="content"></textarea>
                                 </div>
                             </div>
                         </div>

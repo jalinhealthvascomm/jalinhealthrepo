@@ -49,12 +49,12 @@
                         <div class="">
                             <div class="form-group">
                                 <label for="tinymce-headline">Hero Title</label>
-                                <textarea class="form-control" id="tinymce-headline" rows="3" name="heroContentHeadline" form="hero-form"> {{ $heroContentHeadline }} </textarea>
+                                <textarea style="display: none;" class="form-control" id="tinymce-headline" rows="3" name="heroContentHeadline" form="hero-form"> {{ $heroContentHeadline }} </textarea>
                             </div>
 
                             <div class="form-group sub-headline">
                                 <label for="tinymce">Hero Content</label>
-                                <textarea class="form-control" id="tinymce" rows="3" name="content" form="hero-form"> {{ $heroContent }} </textarea>
+                                <textarea style="display: none;" class="form-control" id="tinymce" rows="3" name="content" form="hero-form"> {{ $heroContent }} </textarea>
                             </div>
 
                             <div class="form-group">

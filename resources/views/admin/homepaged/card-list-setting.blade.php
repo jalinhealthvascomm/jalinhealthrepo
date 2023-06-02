@@ -57,7 +57,7 @@
                         <div class="col">
                             <label for="setting-solution-headline">Heading</label>
                             <div class="form-group">
-                                <textarea id="setting-solution-headline" form="solution-form"
+                                <textarea style="display: none;" id="setting-solution-headline" form="solution-form"
                                     name="section-headline">{{ $contentHeadline ?? '' }}</textarea>
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                         <div class="col">
                             <label for="setting-solution-title">Description</label>
                             <div class="form-group">
-                                <textarea id="setting-solution-title" form="solution-form"
+                                <textarea style="display: none;" id="setting-solution-title" form="solution-form"
                                     name="section-title">{{ $content ?? '' }}</textarea>
                             </div>
                         </div>

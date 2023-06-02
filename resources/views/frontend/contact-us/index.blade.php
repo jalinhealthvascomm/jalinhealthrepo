@@ -188,7 +188,7 @@
                 <label for="message" class="paragraph-2 text-navy font-semibold">Message</label>
                 <textarea name="message" id="message" cols="30" rows="5" placeholder="Fill your message"
                 class="form-textarea border broder-gray-5 rounded-lg px-2 py-3 lg:px-4 lg:py-6"
-                style="box-shadow: 0px 2px 15px rgba(45, 52, 68, 0.1);" x-model="input">{{ old('message') }}</textarea>
+                style="box-shadow: 0px 2px 15px rgba(45, 52, 68, 0.1); display:block!important; height:200px;" x-model="input">{{ old('message') }}</textarea>
                 @error('message')
                 <div class="alert alert-danger" role="alert" x-bind:class="input !== '' ? 'hidden' : ''" role="alert">
                     <strong>Message</strong> required!

@@ -33,7 +33,7 @@
                                 <label for="service-feature-add">
                                     <h6>Services Description</h6>
                                 </label>
-                                <textarea id="service-feature-add" name="description"></textarea>
+                                <textarea style="display: none;" id="service-feature-add" name="description"></textarea>
                             </div>
                         </div>
                     </div>
@@ -79,7 +79,7 @@
                                 <label for="service-feature-edit">
                                     <h6>Services Description</h6>
                                 </label>
-                                <textarea id="service-feature-edit" name="description"></textarea>
+                                <textarea style="display: none;" id="service-feature-edit" name="description"></textarea>
                             </div>
                         </div>
                     </div>

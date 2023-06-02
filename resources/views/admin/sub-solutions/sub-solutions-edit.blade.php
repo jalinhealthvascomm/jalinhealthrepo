@@ -29,7 +29,7 @@
                             <label for="sub-solution-title">
                                 <h6>Description</h6>
                             </label>
-                            <textarea id="feature-description" name="description"></textarea>
+                            <textarea style="display: none;" id="feature-description" name="description"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -70,7 +70,7 @@
                             <label for="sub-solution-description">
                                 <h6>Description</h6>
                             </label>
-                            <textarea id="edit-feature-description" name="description"></textarea>
+                            <textarea style="display: none;" id="edit-feature-description" name="description"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -136,7 +136,7 @@
                             <label for="sub-solution-title">
                                 <h6>Other Feature / Benefit</h6>
                             </label>
-                            <textarea id="other-feature-title" name="features"></textarea>
+                            <textarea style="display: none;" id="other-feature-title" name="features"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -168,7 +168,7 @@
                             <label for="sub-solution-title">
                                 <h6>Other Feature / Benefit</h6>
                             </label>
-                            <textarea id="other-feature-title-edit" name="features"></textarea>
+                            <textarea style="display: none;" id="other-feature-title-edit" name="features"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -200,7 +200,7 @@
                             <label for="sub-solution-title">
                                 <h6>Other Feature / Benefit</h6>
                             </label>
-                            <textarea id="other-feature-title-delete" name="features" readonly></textarea>
+                            <textarea style="display: none;" id="other-feature-title-delete" name="features" readonly></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -336,7 +336,7 @@
                                             <label for="solution-description">
                                                 <h5>Description</h5>
                                             </label>
-                                            <textarea id="solution-description"
+                                            <textarea style="display: none;" id="solution-description"
                                                 name="description">{!! $subSolution->description !!}</textarea>
                                             @error('description')
                                             <div class="alert alert-danger" role="alert">
@@ -357,7 +357,7 @@
                                             <label for="solution-detail">
                                                 <h5>Detail</h5>
                                             </label>
-                                            <textarea id="solution-detail"
+                                            <textarea style="display: none;" id="solution-detail"
                                                 name="detail">{!! $subSolution->detail !!}</textarea>
                                             @error('detail')
                                             <div class="alert alert-danger" role="alert">
