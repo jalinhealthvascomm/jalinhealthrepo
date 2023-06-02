@@ -174,6 +174,14 @@ if (getWrapper) {
     }
 }
 
+const contactWrapper = document.querySelector('.contact-wrapper');
+if (contactWrapper) {
+    if (windowWidth < 769) {
+        contactWrapper.classList.add('container');
+        contactWrapper.classList.add('w-full');
+    }
+}
+
 
 
 
