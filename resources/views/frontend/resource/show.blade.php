@@ -21,7 +21,7 @@
             @endif
             <h2 class="heading-1 font-bold text-navy pb-5 lg:pb-10">{{ $resources->title }}</h2>
             @if (!empty($resources->image))
-                <img src="{{ url($resources->image) }}" alt="" class="w-full max-h-[480px] object-contain rounded-md lg:rounded-2xl">
+                <img src="{{ url($resources->image) }}" alt="" class="w-full object-cover rounded-md lg:rounded-2xl">
             @endif
             <div class="resource-content pt-5 lg:pt-10">
                 {!! $resources->content !!}

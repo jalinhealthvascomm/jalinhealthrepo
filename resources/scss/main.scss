@@ -132,11 +132,42 @@
   }
 
 .business-process {
+
+    .card-wrapper{
+        .card-process{
+            position: relative;
+            top: 0;
+            transition: top .3s;
+            height: 100%;
+        }
+        &:hover{
+            .card-process{
+                position: relative;
+                top: -40px;
+                transition: top .3s;
+                background: linear-gradient(112.58deg, #3C97F4 14.69%, #3BC2FC 100%);
+                .card-border{
+                    @apply border border-transparent;
+                    svg{
+                        path {
+                            fill: #007FFF
+                        }
+                    }
+                    h3 {
+                        @apply text-white;
+                    }
+                    a {
+                        @apply bg-white text-primary;
+                    }
+                    .badge {
+                        @apply bg-white;
+                    }
+                }
+            }
+        }
+    }
+
     .card-process {
-        position: relative;
-        top: 0;
-        transition: top .3s;
-        height: 100%;
         .card-border {
             @apply border border-[#CCE5FF] h-full justify-between;
             svg {
@@ -157,29 +188,6 @@
                             stop-color: blueviolet;
                         }
                     }
-                }
-            }
-        }
-        &:hover {
-            position: relative;
-            top: -40px;
-            transition: top .3s;
-            background: linear-gradient(112.58deg, #3C97F4 14.69%, #3BC2FC 100%);
-            .card-border{
-                @apply border border-transparent;
-                svg{
-                    path {
-                        fill: #007FFF
-                    }
-                }
-                h3 {
-                    @apply text-white;
-                }
-                a {
-                    @apply bg-white text-primary;
-                }
-                .badge {
-                    @apply bg-white;
                 }
             }
         }
