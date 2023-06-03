@@ -134,7 +134,7 @@
                 @if ($productDetails->contentBenefit && count($productDetails->contentBenefit)/2 > 0)
                     <div class="right-side w-1/2 flex flex-col gap-6">
                         @foreach ($productDetails->contentBenefit as $key => $item)
-                            @if ($key % 2 === 0)
+                            @if ($key % 2 === 1)
                             <div class="flex items-center md:items-start gap-4">
                                 <span class="pt-1.5">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"

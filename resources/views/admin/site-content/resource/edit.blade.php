@@ -1,7 +1,12 @@
 @extends('layouts.user_type.auth')
 
 @section('content')
-
+@if(Session::has('saveSuccess'))
+<div class="alert alert-success" role="alert" x-data="{ show: true}" x-init="setTimeout(()=>{show=false;}, 3000)"
+    x-show="show" x-transition>
+    {{ Session::get('saveSuccess') }}
+</div>
+@endif
 <div class="py-4">
     <div class="row mb-4">
         <div class="col">

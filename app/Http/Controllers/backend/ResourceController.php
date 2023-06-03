@@ -190,7 +190,7 @@ class ResourceController extends Controller
         $metaTagRelate->update();
                 
         Session::flash('saveSuccess', 'Resource Saved!');
-        return redirect()->route('admin.resources.index');
+        return redirect()->route('admin.resources.edit', $siteContent->slug);
     }
 
     /**

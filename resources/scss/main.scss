@@ -454,6 +454,29 @@ p.title-bullet::before{
 .resource-content{
     p {
         @apply text-[10px] sm:text-xs md:text-sm lg:text-base leading-normal text-gray-3 font-normal mb-2 lg:mb-6;
+        img {
+            @apply inline-block;
+        }
+    }
+
+    iframe {
+        @apply mx-auto;
+    }
+
+    ul {
+        list-style-type: disc!important;
+        margin-left: 20px;
+        li {
+            @apply text-[10px] sm:text-xs md:text-sm lg:text-base leading-normal text-gray-3 font-normal mb-2 lg:mb-6;
+        }
+    }
+
+    ol {
+        list-style-type: decimal!important;
+        margin-left: 20px;
+        li {
+            @apply text-[10px] sm:text-xs md:text-sm lg:text-base leading-normal text-gray-3 font-normal mb-2 lg:mb-6;
+        }
     }
 }
 
@@ -567,11 +590,5 @@ div.overview{
 .frm-submit {
     input, select, textarea {
         border: 1px solid #E0E0E0!important;
-    }
-}
-
-.resource-content {
-    iframe {
-        @apply mx-auto;
     }
 }
