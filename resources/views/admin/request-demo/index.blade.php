@@ -63,10 +63,40 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="submit" class="btn bg-gradient-primary">Delete Request</button>
+                        {{-- <button type="submit" class="btn bg-gradient-primary">Delete Request</button> --}}
+                        <a href="#"
+                            class="btn bg-gradient-primary" 
+                            data-toggle="tooltip"
+                            data-original-title="Delete"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalDelete">
+                            Delete
+                        </a>
                         <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Delete -->
+<div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modalDelete" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" style="max-width: 450px; margin: 0 auto;">
+            <div class="modal-header">
+                <h5 class="modal-title font-weight-normal" id="exampleModalLabel">Delete Item</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5>Delete message permanently?</h5>
+                <p>If you delete this message, you won't be able to recover it. Do you wont to delete it?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" form="detail-message" class="btn bg-gradient-primary">Delete Item</button>
             </div>
         </div>
     </div>
