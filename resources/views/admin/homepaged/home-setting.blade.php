@@ -115,10 +115,7 @@
                         <div class="form-group">
                             <label for="map">Map Embed</label>
                             <input type="hidden" value="{{ $contactUs->contentMetas[3]->id ?? '' }}" name="contact_map">
-                            {{-- <input type="text" class="form-control" id="address" name="address"
-                                placeholder="address" value="{{ $contactUs->contentMetas[2]->value ?? '' }}"> --}}
-                             style="display: none;" class="form-control" name="map" id="map" cols="30" rows="5">{{ $contactUs->contentMetas[3]->value ?? '' }}</textarea>
-                             <textarea  class="form-control" name="map" id="map" cols="30" rows="5">{{ $contactUs->contentMetas[3]->value ?? '' }}</textarea>
+                            <textarea  class="form-control" name="map" id="map" cols="30" rows="5">{{ $contactUs->contentMetas[3]->value ?? '' }}</textarea>
                             @error('map')
                                 <div class="alert alert-danger" role="alert">
                                     <strong>Contact address</strong> required!
