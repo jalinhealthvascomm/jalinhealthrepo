@@ -161,7 +161,8 @@ export default {
             resources: null,
             emptyResources: null,
             isLoaded: false,
-            selectedCat: 'uncategorized'
+            selectedCat: 'uncategorized',
+            isLoading: true
         }
     },
     methods: {
