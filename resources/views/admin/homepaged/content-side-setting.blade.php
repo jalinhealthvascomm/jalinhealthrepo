@@ -105,7 +105,7 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="youtubeiframe" class="form-label">Youtube Iframe</label>
-                                        <textarea style="display: none;" class="form-control" id="youtubeiframe" cols="30" rows="5" form="content-side-form" name="youtubeiframe"> {{ $video ?? '' }} </textarea>
+                                        <textarea class="form-control" id="youtubeiframe" cols="30" rows="5" form="content-side-form" name="youtubeiframe"> {{ $video ?? '' }} </textarea>
                                     </div>
                                 </div>
                             </div>
