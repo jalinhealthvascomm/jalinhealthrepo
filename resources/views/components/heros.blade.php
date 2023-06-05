@@ -122,7 +122,7 @@
                                 <div class="flex justify-between w-full">
                                     <div x-data="{
                                         open: false,
-                                        selected1: 'Select' ,
+                                        selected1: '{{ old( 'discoveriam', 'Select')}}' ,
                                         toggle() {
                                             if (this.open) {
                                                 return this.close()
@@ -147,7 +147,7 @@
                                         <!-- Button -->
                                         <button x-ref="button" x-on:click="toggle()" :aria-expanded="open"
                                             :aria-controls="$id('dropdown-button')" type="button"
-                                            class="effect-1 flex items-center gap-3 sm:gap-6 2xl:gap-[42px] bg-white rounded-md w-full  justify-between sm:justify-start">
+                                            class="effect-1 flex items-center gap-3 sm:gap-6  bg-white rounded-md w-full  justify-between sm:justify-start">
                                             <div class="flex flex-col w-full">
                                                 <label for="label" class="text-left heading-3 text-gray-3 whitespace-nowrap">I am</label>
                                                 <span class="text-left heading-3 font-bold text-navy w-fit" id="select-input-one" x-text="selected1"></span>
@@ -197,7 +197,7 @@
                                 <div class="flex justify-between w-full">
                                     <div x-data="{
                                         open: false,
-                                        selected2: 'Select',
+                                        selected2: '{{ old( 'discoverwork', 'Select')}}',
                                         toggle() {
                                             if (this.open) {
                                                 return this.close()
@@ -221,7 +221,7 @@
                                         <!-- Button -->
                                         <button x-ref="button" x-on:click="toggle()" :aria-expanded="open"
                                             :aria-controls="$id('dropdown-button')" type="button"
-                                            class="effect-2 flex items-center gap-3 sm:gap-6 2xl:gap-[42px] bg-white rounded-md w-full  justify-between sm:justify-start">
+                                            class="effect-2 flex items-center gap-3 sm:gap-6  bg-white rounded-md w-full  justify-between sm:justify-start">
                                             <div class="flex flex-col w-full">
                                                 <label for="label" class="text-left heading-3 text-gray-3 whitespace-nowrap">Working
                                                     in</label>
@@ -270,7 +270,7 @@
                                 <div class="flex justify-betwee:justify-center">
                                     <div x-data="{
                                         open: false,
-                                        selected3: 'Select',
+                                        selected3: '{{ old( 'discoverfor', 'Select')}}',
                                         selectedTarget:'',
                                         toggle() {
                                             if (this.open) {
@@ -293,7 +293,7 @@
                                         <!-- Button -->
                                         <button x-ref="button" x-on:click="toggle()" :aria-expanded="open"
                                             :aria-controls="$id('dropdown-button')" type="button"
-                                            class="effect-3 flex items-center gap-3 sm:gap-6 2xl:gap-[42px] bg-white rounded-md w-full  justify-between sm:justify-start">
+                                            class="effect-3 flex items-center gap-3 sm:gap-6  bg-white rounded-md w-full  justify-between sm:justify-start">
                                             <div class="flex flex-col w-full">
                                                 <label for="label" class=" heading-3 text-left text-gray-3 whitespace-nowrap">Searching
                                                     for</label>

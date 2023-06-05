@@ -115,7 +115,7 @@
         <form class="frm-submit" action="/contact-us/submit" method="post">
             @csrf
             <div class="flex flex-col lg:flex-row gap-8 lg:gap-10">
-                <div x-data="{ input: '' }" 
+                <div x-data="{ input: '{{ old( 'fullName', '')}}' }" 
                     class="form-input-group flex flex-col gap-2 lg:gap-4 w-full">
                     <label for="fullName" class="paragraph-2 text-navy font-semibold">Full Name</label>
                     <input type="text" name="fullName" id="fullName" placeholder="Fill your name"
@@ -127,9 +127,8 @@
                     </div>
                     @enderror
                 </div>
-                <div x-data="{
-                    input: ''
-                }" class="form-input-group flex flex-col gap-2 lg:gap-4 w-full">
+                <div x-data="{ input: '{{ old( 'phone', '')}}' }" 
+                class="form-input-group flex flex-col gap-2 lg:gap-4 w-full">
                     <label for="phone" class="paragraph-2 text-navy font-semibold">Phone</label>
                     <input type="number" name="phone" id="phone" placeholder="Fill your phone number"
                         class="border broder-gray-5 rounded-lg py-2 lg:p-4"
@@ -141,14 +140,14 @@
                     </div>
                     @enderror
                 </div>
-                <div class="form-input-group flex flex-col gap-2 lg:gap-4 w-full" x-data="{ input: '' }">
+                <div class="form-input-group flex flex-col gap-2 lg:gap-4 w-full" x-data="{ input: '{{ old( 'email', '')}}' }">
                     <label for="email" class="paragraph-2 text-navy font-semibold">Email</label>
                     <input type="email" name="email" id="email" placeholder="Fill your email"
                         class="border broder-gray-5 rounded-lg py-2 lg:p-4"
                         style="box-shadow: 0px 2px 15px rgba(45, 52, 68, 0.1);"
                         value="{{ old('email') }}" x-model="input">
                     @error('email')
-                    <div class="alert alert-danger" role="alert" x-bind:class="input !== '' ? 'hidden' : ''" role="alert">
+                    <div class="alert alert-danger" role="alert" x-bind:class="input !== '' ? 'hidden' : ''">
                         <strong>Email</strong> required!
                     </div>
                     @enderror
@@ -164,7 +163,7 @@
                         @endforeach
                     </select>
                     @error('organizationType')
-                    <div class="alert alert-danger" role="alert" x-bind:class="input !== '' ? 'hidden' : ''" role="alert">
+                    <div class="alert alert-danger" role="alert" x-bind:class="input !== '' ? 'hidden' : ''">
                         <strong>Organization type</strong> required!
                     </div>
                     @enderror
@@ -178,19 +177,19 @@
                         @endforeach
                     </select>
                     @error('inquerySubject')
-                    <div class="alert alert-danger" role="alert" x-bind:class="input !== '' ? 'hidden' : ''" role="alert">
+                    <div class="alert alert-danger" role="alert" x-bind:class="input !== '' ? 'hidden' : ''">
                         <strong>Inquiry subject</strong> required!
                     </div>
                     @enderror
                 </div>
             </div>
-            <div class="form-input-group flex flex-col gap-2 lg:gap-4 w-full pt-8 pb-10" x-data="{ input: '' }">
+            <div class="form-input-group flex flex-col gap-2 lg:gap-4 w-full pt-8 pb-10" x-data="{ input: '{{ old( 'message', '')}}' }">
                 <label for="message" class="paragraph-2 text-navy font-semibold">Message</label>
                 <textarea name="message" id="message" cols="30" rows="5" placeholder="Fill your message"
                 class="form-textarea border broder-gray-5 rounded-lg px-2 py-3 lg:px-4 lg:py-6"
                 style="box-shadow: 0px 2px 15px rgba(45, 52, 68, 0.1); display:block!important; height:200px;" x-model="input">{{ old('message') }}</textarea>
                 @error('message')
-                <div class="alert alert-danger" role="alert" x-bind:class="input !== '' ? 'hidden' : ''" role="alert">
+                <div class="alert alert-danger" role="alert" x-bind:class="input !== '' ? 'hidden' : ''">
                     <strong>Message</strong> required!
                 </div>
                 @enderror
