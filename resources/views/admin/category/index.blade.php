@@ -99,6 +99,14 @@
     </div>
 </div>
 
+@error('title')
+<div class="alert alert-danger" role="alert" style="color: white;"
+    x-data="{ show: true}" x-init="setTimeout(()=>{show=false;}, 3000)"
+    x-show="show" x-transition>
+    <strong>Title</strong> required!
+</div>
+@enderror
+
 <div class="py-4">
     @if(Session::has('saveSuccess'))
     <div class="alert alert-success" role="alert" 

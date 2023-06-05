@@ -44,6 +44,9 @@ class CategoryController extends Controller
     {
         //
         abort_if(Gate::denies('administrator'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        $this->validate($request, [
+            'title' => 'required'
+        ]);
         $category = new Category();
         $category->title = $request->input('title');
         $category->saveOrFail();
@@ -84,6 +87,9 @@ class CategoryController extends Controller
     {
         //
         abort_if(Gate::denies('administrator'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        $this->validate($request, [
+            'title' => 'required'
+        ]);
         $category = Category::where('slug', '=', $id)->firstOrFail();
         $category->title = $request->input('title');
         $category->update();
