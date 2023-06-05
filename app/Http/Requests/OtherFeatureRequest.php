@@ -24,7 +24,7 @@ class OtherFeatureRequest extends FormRequest
     public function rules()
     {
         return [
-            'features' => 'required',
+            'features-benefit' => 'required|min:15',
         ];
     }
 }

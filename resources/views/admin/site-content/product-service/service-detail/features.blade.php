@@ -13,7 +13,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/admin/content-feature/new/{{$siteContent->id}}" method="post" id="frmServiceFeatureAdd"
+                <form action="/admin/service-benefit/content-feature/new/{{$siteContent->id}}" method="post" id="frmServiceFeatureAdd"
                     enctype="multipart/form-data">
                     @csrf
                     <div class="row">
@@ -80,6 +80,7 @@
                                     <h6>Services Description</h6>
                                 </label>
                                 <textarea style="display: none;" id="service-feature-edit" name="description"></textarea>
+                                <span>Min 15 Character </span>
                             </div>
                         </div>
                     </div>
@@ -129,6 +130,19 @@
     </div>
 </div>
 
+@error('features')
+<div class="alert alert-danger" role="alert" x-data="{ show: true}" x-init="setTimeout(()=>{show=false;}, 3000)"
+    x-show="show" x-transition style="color: white">
+    <strong>Service Feature</strong> required!
+</div>
+@enderror
+
+@error('description')
+<div class="alert alert-danger" role="alert" x-data="{ show: true}" x-init="setTimeout(()=>{show=false;}, 3000)"
+    x-show="show" x-transition style="color: white">
+    <strong>Description</strong> required!
+</div>
+@enderror
 
 <div class="py-4">
     @if(Session::has('saveSuccess'))
@@ -265,7 +279,7 @@
     function serviceFeatureEdit(feature) {
         let editFeature = document.getElementById('frmServiceFeatureEdit');
         if (editFeature) {
-            editFeature.action = '/admin/content-feature/update/' + feature.id;
+            editFeature.action = '/admin/service-benefit/content-feature/update/' + feature.id;
         }
 
         let editTitle = document.getElementById('edit-feature-title');

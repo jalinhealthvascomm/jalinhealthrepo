@@ -165,7 +165,7 @@ class SubSolutionController extends Controller
         $otherFeature = new Feature();
         $otherFeature->sub_solution_id = $id;
         $otherFeature->features=$request->input('features');
-        $otherFeature->description=$request->input('description');
+        $otherFeature->description=$request->input('feature-description');
         $otherFeature->save();
 
         Session::flash('saveSuccess',  'Feature Saved!');
@@ -177,7 +177,7 @@ class SubSolutionController extends Controller
         $otherFeature = new Feature();
         $otherFeature->sub_solution_id = $id;
         $otherFeature->features=$request->input('features');
-        $otherFeature->description=$request->input('description');
+        $otherFeature->description=$request->input('feature-description');
         $otherFeature->update();
 
         Session::flash('saveSuccess',  'Feature Updated!');

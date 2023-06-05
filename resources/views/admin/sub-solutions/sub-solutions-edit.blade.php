@@ -1,5 +1,5 @@
 @extends('layouts.user_type.auth')
-
+ 
 @section('content')
 <!-- Modal Feature Add -->
 <div class="modal fade" id="modalFeature" tabindex="-1" role="dialog" aria-labelledby="modalFeature" aria-hidden="true">
@@ -29,7 +29,7 @@
                             <label for="sub-solution-title">
                                 <h6>Description</h6>
                             </label>
-                            <textarea style="display: none;" id="feature-description" name="description"></textarea>
+                            <textarea style="display: none;" id="feature-description" name="feature-description"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -70,7 +70,7 @@
                             <label for="sub-solution-description">
                                 <h6>Description</h6>
                             </label>
-                            <textarea style="display: none;" id="edit-feature-description" name="description"></textarea>
+                            <textarea style="display: none;" id="edit-feature-description" name="feature-description"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -136,7 +136,8 @@
                             <label for="sub-solution-title">
                                 <h6>Other Feature / Benefit</h6>
                             </label>
-                            <textarea style="display: none;" id="other-feature-title" name="features"></textarea>
+                            <textarea style="display: none;" id="other-feature-title" name="features-benefit"></textarea>
+                            <span>Min 15 Character</span>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -168,7 +169,8 @@
                             <label for="sub-solution-title">
                                 <h6>Other Feature / Benefit</h6>
                             </label>
-                            <textarea style="display: none;" id="other-feature-title-edit" name="features"></textarea>
+                            <textarea style="display: none;" id="other-feature-title-edit" name="features-benefit"></textarea>
+                            <span>Min 15 Character</span>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -200,7 +202,7 @@
                             <label for="sub-solution-title">
                                 <h6>Other Feature / Benefit</h6>
                             </label>
-                            <textarea style="display: none;" id="other-feature-title-delete" name="features" readonly></textarea>
+                            <textarea style="display: none;" id="other-feature-title-delete" name="features-benefit" readonly></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -212,6 +214,27 @@
         </div>
     </div>
 </div>
+
+@error('features')
+<div class="alert alert-danger" role="alert" x-data="{ show: true}" x-init="setTimeout(()=>{show=false;}, 3000)"
+    x-show="show" x-transition style="color: white">
+    <strong>Feature</strong> required!
+</div>
+@enderror
+
+@error('feature-description')
+<div class="alert alert-danger" role="alert" x-data="{ show: true}" x-init="setTimeout(()=>{show=false;}, 3000)"
+    x-show="show" x-transition style="color: white">
+    <strong>Feature Description</strong> required!
+</div>
+@enderror
+
+@error('features-benefit')
+<div class="alert alert-danger" role="alert" x-data="{ show: true}" x-init="setTimeout(()=>{show=false;}, 3000)"
+    x-show="show" x-transition style="color: white">
+    <strong>Other Feature / Benefit</strong> required!
+</div>
+@enderror
 
 <main class="main-content position-relative min-vh-100 mt-1 border-radius-lg ">
     @if(Session::has('saveSuccess'))
@@ -340,7 +363,7 @@
                                                 name="description">{!! $subSolution->description !!}</textarea>
                                             @error('description')
                                             <div class="alert alert-danger" role="alert">
-                                                <strong>Seo Meta Description</strong> required!
+                                                <strong>Description</strong> required!
                                             </div>
                                             @enderror
                                         </div>
@@ -378,7 +401,7 @@
                                             <div class="col">
                                                 <div class="form-group py-4">
                                                     <label for="solution-icon">
-                                                        <h5>icon</h5>
+                                                        <h5>Icon</h5>
                                                     </label>
                                                     <input type="file" class="form-control" id="solution-icon"
                                                         name="icon" onchange="readURL('#preview-icon',this, null, 60)">

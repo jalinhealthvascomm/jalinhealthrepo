@@ -35,7 +35,7 @@
             <li class="nav-item">
                 <a class="nav-link {{ (Request::is('admin/request-demo/organization-type') ? 'active' : '') }}" 
                 href="{{ url('/admin/request-demo/organization-type') }}">
-                    <span class="nav-link-text ms-1">Organization type</span>
+                    <span class="nav-link-text ms-1">Organization Type</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -157,7 +157,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link pb-2 pt-2 {{ (Request::is(['admin/resources']) ? 'active' : '') }}"
+                <a class="nav-link pb-2 pt-2 {{ (Request::is(['admin/resources', 'admin/resources/*']) ? 'active' : '') }}"
                     href="{{ route('admin.resources.index') }}">
                     <span class="nav-link-text ms-1">List Resources</span>
                 </a>

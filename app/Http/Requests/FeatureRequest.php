@@ -25,7 +25,7 @@ class FeatureRequest extends FormRequest
     {
         return [
             'features' => 'required',
-            'description' => 'required',
+            'feature-description' => 'required',
         ];
     }
 }

@@ -202,6 +202,8 @@ class ResourceController extends Controller
     public function destroy($id)
     {
         $resource = Resource::where('id', '=', $id)->firstOrFail();
+        $resource->slug = $resource.'-deleted';
+        $resource->update();
         $resource->delete();
         $resource->contentMetas()->delete();
         Session::flash('saveSuccess', 'Resource Deleted!');

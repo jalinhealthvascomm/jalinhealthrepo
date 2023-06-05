@@ -43,7 +43,7 @@
                                         <div class="row px-3">
                                             <div class="col">
                                                 <div class="form-group py-4">
-                                                    <label for="solution-icon"><h6>icon</h6></label>
+                                                    <label for="solution-icon"><h6>Icon</h6></label>
                                                     <input type="file" class="form-control" id="solution-icon" name="icon" onchange="readURL('#preview-icon',this, null, 60)">
                                                 </div>
                                             </div>

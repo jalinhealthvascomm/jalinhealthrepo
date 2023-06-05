@@ -103,6 +103,12 @@
     </div>
 </div>
 
+@error('description')
+<div class="alert alert-danger" role="alert" x-data="{ show: true}" x-init="setTimeout(()=>{show=false;}, 3000)"
+    x-show="show" x-transition style="color: white">
+    <strong>Product Benefits Description</strong> required!
+</div>
+@enderror
 
 <div class="py-4">
     @if(Session::has('saveSuccess'))

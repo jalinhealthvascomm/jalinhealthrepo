@@ -222,7 +222,7 @@
                                                 <div class="col">
                                                     <div class="form-group py-4">
                                                         <label for="solution-icon">
-                                                            <h6>icon</h6>
+                                                            <h6>Icon</h6>
                                                         </label>
                                                         <input type="file" class="form-control" id="solution-icon"
                                                             name="icon" onchange="readURL('#preview-icon',this, null, 60)">

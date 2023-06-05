@@ -97,6 +97,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth:sanc
 	Route::post('architecture-feature/new/{SiteContent:id}', [ContentFeatureController::class, 'AddFeature']);
 	Route::post('architecture-feature/update/{ContentFeature:id}', [ContentFeatureController::class, 'UpdateFeature']);
 
+	// service-benefit/
+	Route::post('service-benefit/content-feature/new/{SiteContent:id}', [ContentFeatureController::class, 'AddFeature']);
+	Route::post('service-benefit/content-feature/update/{ContentFeature:id}', [ContentFeatureController::class, 'UpdateFeature']);
+
 	Route::get('content-feature/{SiteContent:slug}', [ContentFeatureController::class, 'features']);
 	Route::get('content-feature/delete/{ContentFeature:id}', [ContentFeatureController::class, 'delete']);
 	Route::post('content-feature/new/{SiteContent:id}', [ContentFeatureController::class, 'AddFeature']);
