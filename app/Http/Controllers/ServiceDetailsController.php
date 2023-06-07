@@ -25,11 +25,13 @@ class ServiceDetailsController extends Controller
         for ($i=1; $i < count($servicesDetails->childs); $i++) { 
             array_push($servicesCards, $servicesDetails->childs[$i]);
         }
-        // dd($servicesCards[0]->contentMetas);
+        
+        $productServicesParent =  SiteContent::where('slug', '=', 'product-and-service')
+        ->with(['childs', 'contentMetas'])->firstOrFail();
         
 
         return view('frontend.service-details.index', compact('title', 'seoKeyword', 'seoDescription', 
-        'servicesDetails', 'servicesCards'
+        'servicesDetails', 'servicesCards','productServicesParent'
         ));
     }
 }

@@ -114,7 +114,9 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-10 pt-10 lgp:t-20 w-fit mx-auto">
             @foreach ($sectionPartner->childs as $item)
-                <a href="{{ $item->excerpt ?? '#' }}" target="{{ $item->excerpt ? '_blank' : ''  }}" class="w-full flex justify-center">
+                <a @if ($item->excerpt !== '#')
+                    href="{{ $item->excerpt }}" target="_blank"
+                @endif  class="w-full flex justify-center">
                     <img src="{{ $item->image }}" alt="{{$item->content}}" title="{{$item->title}}" class="object-contain">
                 </a>
             @endforeach

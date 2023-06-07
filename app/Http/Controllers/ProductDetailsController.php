@@ -32,9 +32,11 @@ class ProductDetailsController extends Controller
             ->get() ?? [];
         $productDetails['contentBenefit'] = $contentBenefit;
         
+        $productServicesParent =  SiteContent::where('slug', '=', 'product-and-service')
+        ->with(['childs', 'contentMetas'])->firstOrFail();
 
         return view('frontend.product-details.index', compact('title', 'seoKeyword', 'seoDescription', 
-        'productDetails'
+        'productDetails', 'productServicesParent'
         ));
     }
 }
