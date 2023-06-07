@@ -202,7 +202,7 @@ class ResourceController extends Controller
     public function destroy($id)
     {
         $resource = Resource::where('id', '=', $id)->firstOrFail();
-        $resource->slug = $resource->slug.'-deleted';
+        $resource->slug = $resource->slug.'-deleted-' . $resource->id;
         $resource->update();
         if( File::exists($resource -> image) ) {
             File::delete($resource -> image);

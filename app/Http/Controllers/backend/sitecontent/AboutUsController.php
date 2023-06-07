@@ -160,19 +160,20 @@ class AboutUsController extends Controller
 
     public function addValue(Request $request){
         $this->validate($request, [
-            'image' => 'nullable'
+            'value-image' => 'required',
+            'value-title' => 'required'
         ]);
         $siteContent = new SiteContent();
-        $siteContent -> title = $request->input('title');
-        $siteContent -> slug = Str::slug($request->input('title'), '-');
+        $siteContent -> title = $request->input('value-title');
+        $siteContent -> slug = Str::slug($request->input('value-title'), '-');
         $siteContent -> content_type = 'value-item';
         $siteContent -> parent = $request->input('parent');
-        if($request->hasFile('image')){
+        if($request->hasFile('value-image')){
             $oldPath = $siteContent -> image;
             if(File::exists($oldPath)) {
                 File::delete($oldPath);
             }
-            $file = $request->file('image');
+            $file = $request->file('value-image');
             $currentTime = Carbon::now()->toDateTimeString();
             $imageName = date('YmdHis', strtotime($currentTime)).'-'.str_replace(' ', '', $file->getClientOriginalName());
             $publicPath = 'images/about-us';
@@ -190,17 +191,18 @@ class AboutUsController extends Controller
 
     public function updateValue(Request $request){
         $this->validate($request, [
-            'image' => 'nullable'
+            'value-image' => 'nullable',
+            'value-title' => 'required'
         ]);
         $siteContent = SiteContent::where('id', '=', $request->input('editId'))->firstOrFail();
-        $siteContent -> title = $request->input('title');
-        $siteContent -> slug = Str::slug($request->input('title'), '-');
-        if($request->hasFile('image')){
+        $siteContent -> title = $request->input('value-title');
+        $siteContent -> slug = Str::slug($request->input('value-title'), '-');
+        if($request->hasFile('value-image')){
             $oldPath = $siteContent -> image;
             if(File::exists($oldPath)) {
                 File::delete($oldPath);
             }
-            $file = $request->file('image');
+            $file = $request->file('value-image');
             $currentTime = Carbon::now()->toDateTimeString();
             $imageName = date('YmdHis', strtotime($currentTime)).'-'.str_replace(' ', '', $file->getClientOriginalName());
             $publicPath = 'images/about-us';
@@ -220,6 +222,11 @@ class AboutUsController extends Controller
         $siteContent = SiteContent::where('id', '=', $request->input('id'))->firstOrFail();
         $parent = SiteContent::where('id', '=', $siteContent->parent)
             ->firstOrFail();
+        $siteContent->slug = $siteContent->slug . '-deleted-' .  $siteContent->id;
+        $siteContent->update();
+        if( File::exists($siteContent -> image) ) {
+            File::delete($siteContent -> image);
+        }
         $siteContent -> delete();
         Session::flash('saveSuccess', 'Feature Item Deleted!');
         return redirect()->route('admin.about-us-sections', $parent -> slug);

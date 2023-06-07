@@ -20,7 +20,7 @@
                             <label for="title">
                                 <h6>Name</h6>
                             </label>
-                            <input type="text" class="form-control" id="partnertitle" name="title">
+                            <input type="text" class="form-control" id="partnertitle" name="partner-title">
                         </div>
                     </div>
         
@@ -52,11 +52,6 @@
                             <div class="form-group mb-0">
                                 <input type="file" class="form-control" name="image" 
                                 onchange="readURL('#edit-preview-icon',this, null, 60)">
-                                @error('image')
-                                <div class="alert alert-danger" role="alert">
-                                    <strong>Image icon</strong> required!
-                                </div>
-                                @enderror
                             </div>
                         </div>
                     </div>

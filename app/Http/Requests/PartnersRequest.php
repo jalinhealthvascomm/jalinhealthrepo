@@ -24,8 +24,8 @@ class PartnersRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
-            'image' => 'nullable',
+            'partner-title' => 'required',
+            'partner-image' => 'nullable',
             'excerpt' => 'nullable',
             'content' => 'nullable',
         ];

@@ -42,21 +42,22 @@ class PartnerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PartnersRequest $request)
+    public function store(Request $request)
     {
         // dd($request);
         $this->validate($request, [
-            'image' => 'nullable'
+            'partner-image' => 'required',
+            'partner-title' => 'required'
         ]);
 
         $siteContent = new SiteContent();
-        $siteContent->title = $request->input('title');
+        $siteContent->title = $request->input('partner-title');
         $siteContent->content = $request->input('content');
-        $siteContent->excerpt = $request->input('excerpt');
+        $siteContent->excerpt = !empty($request->input('excerpt')) ? $request->input('excerpt') : '#';;
         $siteContent->parent = $request->input('parent');
         $siteContent->content_type = 'partner-item';
-        if($request->hasFile('image')){
-            $file = $request->file('image');
+        if($request->hasFile('partner-image')){
+            $file = $request->file('partner-image');
             $currentTime = Carbon::now()->toDateTimeString();
             $imageName = date('YmdHis', strtotime($currentTime)).'-'.str_replace(' ', '', $file->getClientOriginalName());
             $publicPath = 'images/partners';
@@ -76,24 +77,25 @@ class PartnerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(PartnersRequest $request, $id)
+    public function update(Request $request, $id)
     {
         abort_if(Gate::denies('administrator'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         $siteContent = SiteContent::where('id', '=', $id)
             ->firstOrFail();
         $this->validate($request, [
-            'image' => 'nullable'
+            'partner-image' => 'nullable',
+            'partner-title' => 'required'
         ]);
 
-        $siteContent->title = $request->input('title');
-        $siteContent->excerpt = $request->input('excerpt');
+        $siteContent->title = $request->input('partner-title');
+        $siteContent->excerpt = !empty($request->input('excerpt')) ? $request->input('excerpt') : '#';
         $siteContent->content = $request->input('content');
-        if($request->hasFile('image')){
+        if($request->hasFile('partner-image')){
             $oldPath = $siteContent -> image;
             if(File::exists($oldPath)) {
                 File::delete($oldPath);
             }
-            $file = $request->file('image');
+            $file = $request->file('partner-image');
             $currentTime = Carbon::now()->toDateTimeString();
             $imageName = date('YmdHis', strtotime($currentTime)).'-'.str_replace(' ', '', $file->getClientOriginalName());
             $publicPath = 'images/partners';
@@ -120,7 +122,11 @@ class PartnerController extends Controller
             ->firstOrFail();
 
         $oldTitle = $siteContent->title;
-
+        $siteContent->slug = $siteContent->slug . '-deleted-' . $siteContent->id;
+        $siteContent->update();
+        if(File::exists($siteContent->image)) {
+            File::delete($siteContent->image);
+        }
         $siteContent->delete();
         Session::flash('saveSuccess', 'Partner ' . $oldTitle . ' Deleted!');
         return redirect()->route('admin.partners.index');

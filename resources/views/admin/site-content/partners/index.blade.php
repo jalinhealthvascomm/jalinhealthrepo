@@ -8,6 +8,20 @@
 </div>
 @endif
 
+@error('partner-title')
+<div class="alert alert-danger" role="alert" x-data="{ show: true}" x-init="setTimeout(()=>{show=false;}, 3000)"
+    x-show="show" x-transition>
+    <strong>Partner</strong> required!
+</div>
+@enderror
+
+@error('partner-image')
+<div class="alert alert-danger" role="alert" x-data="{ show: true}" x-init="setTimeout(()=>{show=false;}, 3000)"
+    x-show="show" x-transition>
+    <strong>Partner logo</strong> required!
+</div>
+@enderror
+
 @include('admin.site-content.partners.create')
 @include('admin.site-content.partners.edit')
 

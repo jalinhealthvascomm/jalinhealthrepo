@@ -16,27 +16,17 @@
                     @csrf
                     <input type="hidden" id="parent" name="parent" value="">
                     <div class="form-group">
-                        <label for="title">
+                        <label for="value-title">
                             <h6>Value Name</h6>
                         </label>
-                        <input type="text" class="form-control" id="title" name="title" placeholder="" value="">
-                        @error('title')
-                        <div class="alert alert-danger" role="alert">
-                            <strong>Title</strong> required!
-                        </div>
-                        @enderror
+                        <input type="text" class="form-control" id="value-title" name="value-title" placeholder="" value="">
                     </div>
                     <div class="row align-items-center mb-4">
                         
                         <div class="col">
                             <div class="form-group mb-0">
-                                <input type="file" class="form-control" name="image" 
+                                <input type="file" class="form-control" name="value-image" 
                                 onchange="readURL('#preview-icon',this, null, null)">
-                                @error('image')
-                                <div class="alert alert-danger" role="alert">
-                                    <strong>Image icon</strong> required!
-                                </div>
-                                @enderror
                             </div>
                         </div>
                         <div class="col">
@@ -75,24 +65,14 @@
                         <label for="EditTitle">
                             <h6>Value Name</h6>
                         </label>
-                        <input type="text" class="form-control" id="EditTitle" name="title" placeholder="" value="">
-                        @error('title')
-                        <div class="alert alert-danger" role="alert">
-                            <strong>Title</strong> required!
-                        </div>
-                        @enderror
+                        <input type="text" class="form-control" id="EditTitle" name="value-title" placeholder="" value="">
                     </div>
                     <div class="row align-items-center mb-4">
                         
                         <div class="col">
                             <div class="form-group mb-0">
-                                <input type="file" class="form-control" name="image" 
+                                <input type="file" class="form-control" name="value-image" 
                                 onchange="readURL('#edit-preview-icon',this, null, null)">
-                                @error('image')
-                                <div class="alert alert-danger" role="alert">
-                                    <strong>Image icon</strong> required!
-                                </div>
-                                @enderror
                             </div>
                         </div>
                         <div class="col">
@@ -149,6 +129,19 @@
     </div>
 </div>
 
+@error('value-title')
+<div class="alert alert-danger" role="alert" x-data="{ show: true}" x-init="setTimeout(()=>{show=false;}, 3000)"
+    x-show="show" x-transition>
+    <strong>Title Value</strong> required!
+</div>
+@enderror
+
+@error('value-image')
+<div class="alert alert-danger" role="alert" x-data="{ show: true}" x-init="setTimeout(()=>{show=false;}, 3000)"
+    x-show="show" x-transition>
+    <strong>Image icon</strong> required!
+</div>
+@enderror
 
 <div class="py-4">
     @if(Session::has('saveSuccess'))

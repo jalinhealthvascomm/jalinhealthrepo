@@ -107,7 +107,7 @@ class CategoryController extends Controller
     {
         abort_if(Gate::denies('administrator'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         $category = Category::where('slug', '=', $id)->firstOrFail();
-        $category->slug = $category->slug . '-deleted';
+        $category->slug = $category->slug . '-deleted-' . $id;
         $category->update();
         $category->delete();
         Session::flash('saveSuccess', 'Resource Category deleted!');
