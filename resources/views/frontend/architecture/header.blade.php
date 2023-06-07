@@ -10,9 +10,9 @@
             <ul class="effect-1 flex gap-2 text-white paragraph-2 font-medium">
                 <li class="paragraph-2"><a href="/">Home</a></li>
                 <li class="paragraph-2">/</li>
-                <li class="paragraph-2">Product & Services</li>
+                <li class="paragraph-2"><a href="{{ '/' . $productServicesParent->slug }}">Product & Services</a></li>
                 <li class="paragraph-2">/</li>
-                <li class="paragraph-2">Services</li>
+                <li class="paragraph-2"><a href="{{ '/' . $ServicesParent->slug }}">Services</a></li>
                 <li class="paragraph-2">/</li>
                 <li class="paragraph-2">{{$architecture->title}}</li>
             </ul>

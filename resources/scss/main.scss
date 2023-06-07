@@ -281,7 +281,7 @@
         }
     }
     p, span {
-        @apply text-xl lg:text-2xl xl:text-[28px] text-gray-2;
+        @apply text-xl lg:text-2xl xl:text-[28px] text-gray-2 text-justify;
         a{
             @apply text-primary underline underline-offset-4 font-normal;
         }

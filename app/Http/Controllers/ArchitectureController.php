@@ -21,12 +21,19 @@ class ArchitectureController extends Controller
         $seoKeyword = $architecture->seo_keywords ?? '';
         $seoDescription = $architecture->seo_description ?? '';
 
+        $productServicesParent =  SiteContent::where('slug', '=', 'product-and-service')
+        ->with(['childs', 'contentMetas'])->firstOrFail();
+        $ServicesParent =  SiteContent::where('slug', '=', 'services-details')
+        ->with(['childs', 'contentMetas'])->firstOrFail();
+
         return view('frontend.architecture.index', 
             compact(
                 'title', 
                 'seoKeyword', 
                 'seoDescription', 
-                'architecture'
+                'architecture',
+                'productServicesParent',
+                'ServicesParent'
             )
         );
     }
