@@ -42,10 +42,10 @@ p {
 .title-bullet {
   --tw-text-opacity: 1;
   color: rgb(17 16 66/var(--tw-text-opacity));
-  font-size: 1.5rem;
+  // font-size: 1.5rem;
   font-weight: 500;
   line-height: 2rem;
-  padding-left: 2.5rem;
+  padding-left: 2.5rem!important;
   position: relative;
   margin-bottom: 0!important;
 }
@@ -64,7 +64,7 @@ p {
 }
 
 .content-for-bullet {
-  padding-left: 2.5rem;
+  padding-left: 2.5rem!important;
   font-weight: 500;
   color: inherit;
 }
@@ -78,4 +78,10 @@ p a {
 
 .navbar-vertical.navbar-expand-xs{
   max-width: 16.5rem !important;
+}
+
+
+.note-editor .note-toolbar .note-dropdown-menu{
+  min-width: 200px!important;
+  width: fit-content;
 }
