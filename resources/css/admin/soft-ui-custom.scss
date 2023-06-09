@@ -39,7 +39,7 @@ p {
 }
 
 
-p.title-bullet {
+.title-bullet {
   --tw-text-opacity: 1;
   color: rgb(17 16 66/var(--tw-text-opacity));
   font-size: 1.5rem;
@@ -47,10 +47,11 @@ p.title-bullet {
   line-height: 2rem;
   padding-left: 2.5rem;
   position: relative;
+  margin-bottom: 0!important;
 }
 
 
-p.title-bullet:before {
+.title-bullet:before {
   background: #23b6ae;
   border-radius: 50px;
   content: "";
@@ -62,8 +63,16 @@ p.title-bullet:before {
   width: 16px;
 }
 
-p.content-for-bullet {
+.content-for-bullet {
   padding-left: 2.5rem;
+  font-weight: 500;
+  color: inherit;
+}
+
+p a {
+  text-decoration: underline;
+  text-underline-offset: 4;
+  color: #007FFF;
 }
 
 

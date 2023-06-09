@@ -4,12 +4,12 @@
     <div class="container py-10 h-full top-0 relative z-10">
         <div class="">
             <ul class="effect-1 flex gap-2 text-white heading-4 font-medium">
-                <li class="paragraph-2"><a href="/">Home</a></li>
-                <li class="paragraph-2">/</li>
-                <li class="paragraph-2"><a href="/#solutions">Solutions</a></li>
-                <li class="paragraph-2">/</li>
-                <li class="paragraph-2"><a href="{{'/solutions/'.$solution->slug}}">{{$solution->title}}</a></li>
-                <li class="paragraph-2">/</li>
+                <li class="paragraph-2 breadcumb"><a href="/">Home</a></li>
+                <li class="paragraph-2 breadcumb">/</li>
+                <li class="paragraph-2 breadcumb"><a href="/#solutions">Solutions</a></li>
+                <li class="paragraph-2 breadcumb">/</li>
+                <li class="paragraph-2 breadcumb"><a href="{{'/solutions/'.$solution->slug}}">{{$solution->title}}</a></li>
+                <li class="paragraph-2 breadcumb">/</li>
                 <li class="paragraph-2" id="sub-heading-breadcumb">{{$subSolutions[0]->title}}</li>
             </ul>
 

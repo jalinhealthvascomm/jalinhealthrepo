@@ -390,6 +390,12 @@ header {
     }
 }
 
+li.breadcumb {
+    a{
+        @apply text-white no-underline;
+    }
+}
+
 
 // Disabel Menu
 .disable-scroll{
@@ -434,16 +440,20 @@ footer {
     }
 }
 
-p.title-bullet{
-    @apply relative pl-10 pt-10 pb-6 text-navy font-medium text-2xl;
+
+.title-bullet{
+    @apply relative pl-10 pt-10 pb-6 text-navy font-medium text-2xl ;
 }
 
-p.content-for-bullet{
-    @apply pl-10;
+.content-for-bullet{
+    @apply pl-10 text-base lg:text-xl xl:text-2xl text-gray-2;
+    a {
+        @apply text-primary underline underline-offset-4;
+    }
 }
 
 
-p.title-bullet::before{
+.title-bullet::before{
     content: "";
     height: 16px;
     width: 16px;

@@ -698,18 +698,19 @@
                 'p',
                 {
                     title: 'Title with bullet',
-                    tag: 'p',
+                    tag: 'h5',
                     className: 'title-bullet',
-                    value: 'p'
+                    value: 'h5'
                 },
                 {
                     title: 'Content for bullet',
-                    tag: 'p',
+                    tag: 'h6',
                     className: 'content-for-bullet',
-                    value: 'p'
+                    value: 'h6'
                 },
             ],
         });
+        $('#edit-feature-description').summernote('insertParagraph');
     }
 
     function featureDelete(feature) {
