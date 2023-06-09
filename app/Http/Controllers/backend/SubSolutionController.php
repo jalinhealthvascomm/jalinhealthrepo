@@ -152,7 +152,7 @@ class SubSolutionController extends Controller
         abort_if(Gate::denies('administrator'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         $otherFeature = new OtherFeature();
         $otherFeature->sub_solution_id = $id;
-        $otherFeature->features=$request->input('features');
+        $otherFeature->features=$request->input('features-benefit');
         $otherFeature->save();
 
         
@@ -194,7 +194,7 @@ class SubSolutionController extends Controller
     public function other_feature_update(OtherFeatureRequest $request, $id){
         abort_if(Gate::denies('administrator'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         $otherFeature = OtherFeature::find($id);
-        $otherFeature->features=$request->input('features');
+        $otherFeature->features=$request->input('features-benefit');
         $otherFeature->update();
         Session::flash('saveSuccess', 'Other Feature Updated!');
         return redirect()->back();
