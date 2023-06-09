@@ -279,5 +279,10 @@
         }
     }
 
+    var modalEdit = document.getElementById('modalFeatureEdit')
+    modalEdit.addEventListener('hidden.bs.modal', function (event) {
+        $('#product-feature-edit').summernote('destroy');
+    })
+
 </script>
 @endpush

@@ -19,7 +19,7 @@ class OtherFeatureController extends Controller
 
     public function update(OtherFeatureRequest $request, OtherFeature $otherFeature){
         abort_if(Gate::denies('administrator'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-        $otherFeature->features = $request->input('features');
+        $otherFeature->features = $request->input('features-benefit');
         $subSolution = $otherFeature->sub_solution()->get();
         $otherFeature->update();
         Session::flash('saveSuccess', 'other feature / benefit Updated!');

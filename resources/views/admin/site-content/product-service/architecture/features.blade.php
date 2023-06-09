@@ -330,5 +330,10 @@
             title.value = item.features;
         }
     }
+
+    var modalEdit = document.getElementById('modalFeatureEdit')
+    modalEdit.addEventListener('hidden.bs.modal', function (event) {
+        $('#service-feature-edit').summernote('destroy');
+    })
 </script>
 @endpush

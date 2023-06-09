@@ -20,7 +20,7 @@ class FeatureController extends Controller
     public function update(FeatureRequest $request, Feature $feature){
         abort_if(Gate::denies('administrator'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         $feature->features = $request->input('features');
-        $feature->description = $request->input('description');
+        $feature->description = $request->input('feature-description');
         $subSolution = $feature->sub_solution()->get();
         $feature->update();
         Session::flash('saveSuccess', 'feature Updated!');

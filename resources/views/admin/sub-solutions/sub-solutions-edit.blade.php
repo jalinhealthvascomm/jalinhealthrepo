@@ -777,5 +777,20 @@
         $('#other-feature-title-delete').summernote('disable');
     }
 
+    var modalFeatureEdit = document.getElementById('modalFeatureEdit')
+    modalFeatureEdit.addEventListener('hidden.bs.modal', function (event) {
+        $('#edit-feature-description').summernote('destroy');
+    })
+
+    var modalOtherFeatureEdit = document.getElementById('modalOtherFeatureEdit')
+    modalOtherFeatureEdit.addEventListener('hidden.bs.modal', function (event) {
+        $('#other-feature-title-edit').summernote('destroy');
+    })
+
+    var modalOtherFeatureDelete = document.getElementById('modalOtherFeatureDelete')
+    modalOtherFeatureDelete.addEventListener('hidden.bs.modal', function (event) {
+        $('#other-feature-title-delete').summernote('destroy');
+    })
+
 </script>
 @endpush
