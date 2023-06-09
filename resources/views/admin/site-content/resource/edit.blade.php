@@ -34,9 +34,10 @@
                                 <h5>Title</h5>
                             </label>
                             <input type="text" class="form-control" id="resource-title" name="title"
-                                placeholder="resource" value="{{ $resource->title }}">
+                                placeholder="resource" value="{{ old('resource') ?? $resource->title }}">
                             @error('title')
-                            <div class="alert alert-danger" role="alert">
+                            <div class="alert alert-danger" role="alert" x-data="{ show: true}" x-init="setTimeout(()=>{show=false;}, 1500)"
+                                x-show="show" x-transition>
                                 <strong>Title</strong> required!
                             </div>
                             @enderror
@@ -88,9 +89,10 @@
                                 <div class="form-group">
                                     <label for="seoTitle">Meta Title</label>
                                     <input type="text" class="form-control" id="seoTitle" name="seoTitle"
-                                        placeholder="SEO Meta Title" value="{{ $resource->seo_title ?? '' }}">
+                                        placeholder="SEO Meta Title" value="{{ old('seoTitle') ?? $resource->seo_title }}">
                                     @error('seoTitle')
-                                    <div class="alert alert-danger" role="alert">
+                                    <div class="alert alert-danger" role="alert" x-data="{ show: true}" x-init="setTimeout(()=>{show=false;}, 1500)"
+                                        x-show="show" x-transition>
                                         <strong>Seo Meta Title</strong> required!
                                     </div>
                                     @enderror
@@ -100,9 +102,10 @@
                                     <label for="seoDescriptions">Meta Descriptions</label>
                                     <input type="text" class="form-control" id="seoDescriptions" name="seoDescriptions"
                                         placeholder="SEO Meta Descriptions"
-                                        value="{{ $resource->seo_description ?? '' }}">
+                                        value="{{ old('resource') ?? $resource->seo_description }}">
                                     @error('seoDescriptions')
-                                    <div class="alert alert-danger" role="alert">
+                                    <div class="alert alert-danger" role="alert" x-data="{ show: true}" x-init="setTimeout(()=>{show=false;}, 1500)"
+                                        x-show="show" x-transition>
                                         <strong>Seo Meta Descriptions</strong> required!
                                     </div>
                                     @enderror
@@ -111,9 +114,10 @@
                                 <div class="form-group">
                                     <label for="seoKeywords">Meta Keywords</label>
                                     <input type="text" class="form-control" id="seoKeywords" name="seoKeywords"
-                                        placeholder="SEO Meta Keywords" value="{{ $resource->seo_keywords ?? '' }}">
+                                        placeholder="SEO Meta Keywords" value="{{ old('seoKeywords') ?? $resource->seo_keywords }}">
                                     @error('seoKeywords')
-                                    <div class="alert alert-danger" role="alert">
+                                    <div class="alert alert-danger" role="alert" x-data="{ show: true}" x-init="setTimeout(()=>{show=false;}, 1500)"
+                                        x-show="show" x-transition>
                                         <strong>Seo Meta Keywords</strong> required!
                                     </div>
                                     @enderror
@@ -131,7 +135,7 @@
                             </div>
                             <div class="card-body py-2">
                                 <div class="form-group">
-                                    <textarea id="resource-content" name="content">{!! $resource->content !!}</textarea>
+                                    <textarea id="resource-content" name="content">{!! old('content') ?? $resource->content !!}</textarea>
                                 </div>
                             </div>
                         </div>

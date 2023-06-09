@@ -157,7 +157,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link pb-2 pt-2 {{ (Request::is(['admin/resources', 'admin/resources/*']) ? 'active' : '') }}"
+                <a class="nav-link pb-2 pt-2 {{ (Request::is(['admin/resources', 'admin/resources/*']) && !Request::is(['admin/resources/create']) ? 'active' : '') }}"
                     href="{{ route('admin.resources.index') }}">
                     <span class="nav-link-text ms-1">List Resources</span>
                 </a>

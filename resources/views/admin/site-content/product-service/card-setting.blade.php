@@ -84,7 +84,7 @@
                             <div class="col">
                                 <div class="form-group py-4">
                                     <label for="card-icon">
-                                        <h5>icon</h5>
+                                        <h5>Icon</h5>
                                     </label>
                                     <input type="file" class="form-control" id="card-icon"
                                         name="image"

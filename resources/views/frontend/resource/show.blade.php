@@ -75,7 +75,7 @@
                         </span>
                         @if (!empty($relateResource->siteContent->slug))
                         <a href="{{ '/resources/'. $relateResource->siteContent->slug }}">
-                            <h2 class="paragraph-1 font-bold">{{ $relateResource->siteContent->title }}</h2>
+                            <h2 class="paragraph-1 font-bold line-clamp-2">{{ $relateResource->siteContent->title }}</h2>
                         </a>
                         @endif
                         

@@ -149,6 +149,11 @@ class ResourceController extends Controller
      */
     public function update(Request $request, $resource)
     {
+        $this->validate($request, [
+            'image' => 'nullable',
+            'title' => 'required'
+        ]);
+        
         $siteContent = Resource::where('slug', '=', $resource)->with('contentMetas')->firstOrFail();
         $siteContent->title = $request->input('title');
         if (!empty($request->input('slug'))) {
@@ -161,9 +166,7 @@ class ResourceController extends Controller
         $siteContent->seo_description = $request->input('seoDescriptions');
         $siteContent->seo_Keywords = $request->input('seoKeywords');
 
-        $this->validate($request, [
-            'image' => 'nullable',
-        ]);
+        
         $oldPath = '';
         if($request->hasFile('image')){
             $oldPath = $siteContent -> image;

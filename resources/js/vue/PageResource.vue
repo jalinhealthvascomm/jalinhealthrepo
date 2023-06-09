@@ -38,7 +38,7 @@
                                 {{ item.resourceCategory.title }}
                             </span>
                             <a :href="'/resources/' + item.slug">
-                                <h2 class="paragraph-1 font-bold">{{ item.title }}</h2>
+                                <h2 class="paragraph-1 font-bold line-clamp-2">{{ item.title }}</h2>
                             </a>
                         </div>
                     </div>
