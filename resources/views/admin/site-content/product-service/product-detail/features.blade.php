@@ -158,7 +158,7 @@
                                         <div class="d-flex px-2 py-1">
                                             <div class="d-flex gap-4 justify-content-center">
                                                 <h6 class="mb-0 text-sm">{{ $key + 1 }}</h6>
-                                                <h6 class="mb-0 text-sm">{{ strip_tags($contentFeature->description) }}</h6>
+                                                <h6 class="mb-0 text-sm">{!! $contentFeature->description !!}</h6>
                                             </div>
                                         </div>
                                     </td>
