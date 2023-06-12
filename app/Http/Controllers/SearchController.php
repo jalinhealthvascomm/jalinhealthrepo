@@ -102,11 +102,19 @@ class SearchController extends Controller
             if (!empty($siteContents)) {
                 foreach ($siteContents as $key => $value) {
                     if ($value->parent == 0) {
+                        if ($value->content_type == 'resource') {
+                            $data = (object)[
+                                'title' => $value->title,
+                                'content' => $value->content,
+                                'url' =>  'resources/'.$value->slug
+                            ];
+                        }else{
                         $data = (object)[
-                            'title' => $value->title,
-                            'content' => $value->content,
-                            'url' =>  $value->slug
-                        ];
+                                'title' => $value->title,
+                                'content' => $value->content,
+                                'url' =>  $value->slug
+                            ];
+                        }
                     }else{
                         $data = (object)[
                             'title' => $value->masterChild->title,
