@@ -641,7 +641,7 @@
         $('#feature-description').summernote({
             height: 100,
             toolbar: [
-                // ['style', ['style']],
+                ['style', ['style']],
                 ['font', ['bold', 'underline', 'clear']],
                 ['color', ['forecolor']],
                 ['insert', ['link']],
@@ -651,9 +651,15 @@
                 'p',
                 {
                     title: 'Title with bullet',
-                    tag: 'p',
+                    tag: 'h5',
                     className: 'title-bullet',
-                    value: 'p'
+                    value: 'h5'
+                },
+                {
+                    title: 'Content for bullet',
+                    tag: 'h6',
+                    className: 'content-for-bullet',
+                    value: 'h6'
                 },
             ],
         });
