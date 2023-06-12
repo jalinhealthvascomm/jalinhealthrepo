@@ -201,7 +201,8 @@ class SubSolutionController extends Controller
     }
     public function other_feature_destroy($id){
         abort_if(Gate::denies('administrator'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-        $otherFeature = OtherFeature::find($id)->delete();
+        $otherFeature = OtherFeature::find($id);
+        $otherFeature->delete();
 
         Session::flash('saveSuccess', 'Other Feature deleted!');
         return redirect()->back();

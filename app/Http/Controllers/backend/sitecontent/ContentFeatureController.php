@@ -18,7 +18,7 @@ class ContentFeatureController extends Controller
         abort_if(Gate::denies('administrator'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         $checkUrl = explode('/', $request->getRequestUri());
         $isValidate = [
-            'description' => 'required|min:15'
+            'description' => 'required'
         ];
         if (in_array('architecture-feature', $checkUrl)) {
             $isValidate['features'] = 'required';
@@ -28,7 +28,7 @@ class ContentFeatureController extends Controller
         }
 
         $this->validate($request, $isValidate);
-        $contentFeature = ContentFeature::where('id', '=', $id)->firstOrFail();
+        // $contentFeature = ContentFeature::where('id', '=', $id)->firstOrFail();
         $contentFeature = new ContentFeature();
         $contentFeature->site_content_id = $id;
         $contentFeature->type = 'featured';
@@ -52,7 +52,7 @@ class ContentFeatureController extends Controller
         abort_if(Gate::denies('administrator'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         $checkUrl = explode('/', $request->getRequestUri());
         $isValidate = [
-            'description' => 'required|min:15'
+            'description' => 'required'
         ];
         if (in_array('architecture-feature', $checkUrl)) {
             $isValidate['features'] = 'required';

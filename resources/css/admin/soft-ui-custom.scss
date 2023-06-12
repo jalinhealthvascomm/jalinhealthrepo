@@ -85,3 +85,9 @@ p a {
   min-width: 200px!important;
   width: fit-content;
 }
+
+.note-editor .note-editing-area .note-editable a {
+  text-decoration: underline!important;
+  text-underline-offset: 4!important;
+  color: #007FFF!important;
+}

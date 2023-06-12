@@ -50,7 +50,7 @@
                         </div>
                         <div class="col">
                             <div class="form-group mb-0">
-                                <input type="file" class="form-control" name="image" 
+                                <input type="file" class="form-control" name="partner-image" 
                                 onchange="readURL('#edit-preview-icon',this, null, 60)">
                             </div>
                         </div>

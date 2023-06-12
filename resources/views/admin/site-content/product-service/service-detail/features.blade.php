@@ -80,7 +80,7 @@
                                     <h6>Services Description</h6>
                                 </label>
                                 <textarea style="display: none;" id="service-feature-edit" name="description"></textarea>
-                                <span>Min 15 Character </span>
+                                {{-- <span>Min 15 Character </span> --}}
                             </div>
                         </div>
                     </div>

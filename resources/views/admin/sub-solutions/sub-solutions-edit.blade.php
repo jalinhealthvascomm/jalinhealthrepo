@@ -137,7 +137,7 @@
                                 <h6>Other Feature / Benefit</h6>
                             </label>
                             <textarea style="display: none;" id="other-feature-title" name="features-benefit"></textarea>
-                            <span>Min 15 Character</span>
+                            {{-- <span>Min 15 Character</span> --}}
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -170,7 +170,7 @@
                                 <h6>Other Feature / Benefit</h6>
                             </label>
                             <textarea style="display: none;" id="other-feature-title-edit" name="features-benefit"></textarea>
-                            <span>Min 15 Character</span>
+                            {{-- <span>Min 15 Character</span> --}}
                         </div>
                     </div>
                     <div class="modal-footer">
