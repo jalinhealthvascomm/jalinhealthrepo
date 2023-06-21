@@ -60,11 +60,11 @@ class AboutUsController extends Controller
         $siteContent->seo_description = $request->input('seoDescriptions');
         $siteContent->seo_Keywords = $request->input('seoKeywords');
         if($request->hasFile('image')){
-            $oldPath = $siteContent -> image;
+            // $oldPath = $siteContent -> image;
 
-        if(File::exists($oldPath)) {
-            File::delete($oldPath);
-        }
+        // if(File::exists($oldPath)) {
+        //     File::delete($oldPath);
+        // }
             $file = $request->file('image');
             $currentTime = Carbon::now()->toDateTimeString();
             $imageName = date('YmdHis', strtotime($currentTime)).'-'.str_replace(' ', '', $file->getClientOriginalName());
@@ -142,9 +142,9 @@ class AboutUsController extends Controller
         $siteContent -> content = $request->input('content');
         if($request->hasFile('image')){
             $oldPath = $siteContent -> image;
-            if(File::exists($oldPath)) {
-                File::delete($oldPath);
-            }
+            // if(File::exists($oldPath)) {
+            //     File::delete($oldPath);
+            // }
             $file = $request->file('image');
             $currentTime = Carbon::now()->toDateTimeString();
             $imageName = date('YmdHis', strtotime($currentTime)).'-'.str_replace(' ', '', $file->getClientOriginalName());
@@ -169,10 +169,10 @@ class AboutUsController extends Controller
         $siteContent -> content_type = 'value-item';
         $siteContent -> parent = $request->input('parent');
         if($request->hasFile('value-image')){
-            $oldPath = $siteContent -> image;
-            if(File::exists($oldPath)) {
-                File::delete($oldPath);
-            }
+            // $oldPath = $siteContent -> image;
+            // if(File::exists($oldPath)) {
+            //     File::delete($oldPath);
+            // }
             $file = $request->file('value-image');
             $currentTime = Carbon::now()->toDateTimeString();
             $imageName = date('YmdHis', strtotime($currentTime)).'-'.str_replace(' ', '', $file->getClientOriginalName());
@@ -199,9 +199,9 @@ class AboutUsController extends Controller
         $siteContent -> slug = Str::slug($request->input('value-title'), '-');
         if($request->hasFile('value-image')){
             $oldPath = $siteContent -> image;
-            if(File::exists($oldPath)) {
-                File::delete($oldPath);
-            }
+            // if(File::exists($oldPath)) {
+            //     File::delete($oldPath);
+            // }
             $file = $request->file('value-image');
             $currentTime = Carbon::now()->toDateTimeString();
             $imageName = date('YmdHis', strtotime($currentTime)).'-'.str_replace(' ', '', $file->getClientOriginalName());
@@ -224,9 +224,9 @@ class AboutUsController extends Controller
             ->firstOrFail();
         $siteContent->slug = $siteContent->slug . '-deleted-' .  $siteContent->id;
         $siteContent->update();
-        if( File::exists($siteContent -> image) ) {
-            File::delete($siteContent -> image);
-        }
+        // if( File::exists($siteContent -> image) ) {
+        //     File::delete($siteContent -> image);
+        // }
         $siteContent -> delete();
         Session::flash('saveSuccess', 'Feature Item Deleted!');
         return redirect()->route('admin.about-us-sections', $parent -> slug);

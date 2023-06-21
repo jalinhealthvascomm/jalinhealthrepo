@@ -91,10 +91,10 @@ class PartnerController extends Controller
         $siteContent->excerpt = !empty($request->input('excerpt')) ? $request->input('excerpt') : '#';
         $siteContent->content = $request->input('content');
         if($request->hasFile('partner-image')){
-            $oldPath = $siteContent -> image;
-            if(File::exists($oldPath)) {
-                File::delete($oldPath);
-            }
+            // $oldPath = $siteContent -> image;
+            // if(File::exists($oldPath)) {
+            //     File::delete($oldPath);
+            // }
             $file = $request->file('partner-image');
             $currentTime = Carbon::now()->toDateTimeString();
             $imageName = date('YmdHis', strtotime($currentTime)).'-'.str_replace(' ', '', $file->getClientOriginalName());
@@ -125,7 +125,7 @@ class PartnerController extends Controller
         $siteContent->slug = $siteContent->slug . '-deleted-' . $siteContent->id;
         $siteContent->update();
         if(File::exists($siteContent->image)) {
-            File::delete($siteContent->image);
+            // File::delete($siteContent->image);
         }
         $siteContent->delete();
         Session::flash('saveSuccess', 'Partner ' . $oldTitle . ' Deleted!');
