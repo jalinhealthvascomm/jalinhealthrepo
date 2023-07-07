@@ -71,7 +71,7 @@
                         
                         <div class="col">
                             <div class="form-group mb-0">
-                                <input type="file" class="form-control" name="value-image" 
+                                <input type="file" class="form-control input-edit-file" name="value-image" 
                                 onchange="readURL('#edit-preview-icon',this, null, null)">
                             </div>
                         </div>
@@ -83,7 +83,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal" onclick="cancelHandler('.input-edit-file')">Close</button>
                         <button type="submit" class="btn bg-gradient-primary">Save changes</button>
                     </div>
 
@@ -339,25 +339,32 @@
     }
 
     function itemEdit(item) {
-    let EditForm = document.getElementById('frmitemEdit');
-    if (EditForm) {
-        EditForm.action = '/admin/about-us/value-item/update';
-    }
-    let id = document.getElementById('editId');
-    if (id) {
-        id.value = item.id;
+        let EditForm = document.getElementById('frmitemEdit');
+        if (EditForm) {
+            EditForm.action = '/admin/about-us/value-item/update';
+        }
+        let id = document.getElementById('editId');
+        if (id) {
+            id.value = item.id;
+        }
+
+        let title = document.getElementById('EditTitle');
+        if (title) {
+            title.value = item.title;
+        }
+
+        let previewIcon = document.getElementById('edit-preview-icon');
+        if (previewIcon) {
+            previewIcon.src = '/' + item.image;
+        }
     }
 
-    let title = document.getElementById('EditTitle');
-    if (title) {
-        title.value = item.title;
+    function cancelHandler(element) {
+        var inputEl = document.querySelector(element);
+        if (inputEl) {
+            inputEl.value = "";
+        }
     }
-
-    let previewIcon = document.getElementById('edit-preview-icon');
-    if (previewIcon) {
-        previewIcon.src = '/' + item.image;
-    }
-}
 
     $(document).ready(function () {
         $('#side-content').summernote({

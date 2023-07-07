@@ -67,8 +67,8 @@ class AboutUsController extends Controller
         // }
             $file = $request->file('image');
             $currentTime = Carbon::now()->toDateTimeString();
-            $imageName = date('YmdHis', strtotime($currentTime)).'-'.str_replace(' ', '', $file->getClientOriginalName());
-            $publicPath = 'images/about-us';
+            $imageName = str_replace(' ', '-', $file->getClientOriginalName());
+            $publicPath = 'images/aboutus';
             $file->move($publicPath, $imageName);
             $siteContent -> image = $publicPath .'/'. $imageName;
         }
@@ -147,8 +147,8 @@ class AboutUsController extends Controller
             // }
             $file = $request->file('image');
             $currentTime = Carbon::now()->toDateTimeString();
-            $imageName = date('YmdHis', strtotime($currentTime)).'-'.str_replace(' ', '', $file->getClientOriginalName());
-            $publicPath = 'images/about-us';
+            $imageName = str_replace(' ', '-', $file->getClientOriginalName());
+            $publicPath = 'images/aboutus';
             $file->move($publicPath, $imageName);
             $siteContent -> image = $publicPath .'/'. $imageName;
         }
@@ -175,8 +175,8 @@ class AboutUsController extends Controller
             // }
             $file = $request->file('value-image');
             $currentTime = Carbon::now()->toDateTimeString();
-            $imageName = date('YmdHis', strtotime($currentTime)).'-'.str_replace(' ', '', $file->getClientOriginalName());
-            $publicPath = 'images/about-us';
+            $imageName = str_replace(' ', '-', $file->getClientOriginalName());
+            $publicPath = 'images/aboutus';
             $file->move($publicPath, $imageName);
             $siteContent -> image = $publicPath .'/'. $imageName;
         }
@@ -204,8 +204,8 @@ class AboutUsController extends Controller
             // }
             $file = $request->file('value-image');
             $currentTime = Carbon::now()->toDateTimeString();
-            $imageName = date('YmdHis', strtotime($currentTime)).'-'.str_replace(' ', '', $file->getClientOriginalName());
-            $publicPath = 'images/about-us';
+            $imageName = str_replace(' ', '-', $file->getClientOriginalName());
+            $publicPath = 'images/aboutus';
             $file->move($publicPath, $imageName);
             $siteContent -> image = $publicPath .'/'. $imageName;
         }
